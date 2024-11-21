@@ -1,0 +1,74 @@
+{
+  "name": "create-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/runtime": "^7.25.6",
+    "@mui/core-downloads-tracker": "^6.0.0",
+    "@mui/icons-material": "^6.0.2",
+    "@mui/lab": "^6.0.0-beta.9",
+    "@mui/material": "^6.0.0",
+    "@mui/material-pigment-css": "^6.0.2",
+    "@mui/private-theming": "^6.0.0",
+    "@mui/styled-engine": "^5.15.14",
+    "@mui/system": "^6.0.0",
+    "@mui/types": "^7.2.16",
+    "@mui/utils": "^6.0.0",
+    "@popperjs/core": "file:packages/popperjs-core-2.11.8.tgz",
+    "axios": "^1.7.7",
+    "chalk": "^3.0.0",
+    "common-tags": "file:packages/common-tags-1.8.2.tgz",
+    "debug": "^4.3.4",
+    "he": "file:packages/he-1.2.0.tgz",
+    "i18next": "^20.0.0",
+    "is-root": "file:packages/is-root-2.1.0.tgz",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^14.1.1",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "file:packages/web-vitals-4.0.1.tgz"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "overrides": {
+    "@babel/traverse": "^7.24.7",
+    "domelementtype": "^2.0.0",
+    "@wyw-in-js/processor-utils": "^0.5.3",
+    "@wyw-in-js/shared": "^0.5.3",
+    "@wyw-in-js/transform": "^0.5.3",
+    "deepmerge": "^4.3.1",
+    "object.omit": "^2.0.1",
+    "entities": "^2.2.0",
+    "webidl-conversions": "^6.1.0",
+    "whatwg-encoding": "^1.0.5",
+    "whatwg-mimetype": "^2.3.0",
+    "@floating-ui/react-dom": "^2.1.0",
+    "@mui/utils": "^6.0.0",
+    "@pigment-css/react": "^0.0.20",
+    "@mui/material-pigment-css": "^6.0.2",
+    "form-data": "^3.0.0"
+  }
+}
