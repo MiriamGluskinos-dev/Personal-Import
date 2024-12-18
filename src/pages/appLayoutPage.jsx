@@ -7,7 +7,7 @@ export default function AppLayoutPage() {
 
   return (
     <div>
-      <p>hello word</p>
+      <p>hello word!</p>
     </div>
   )
 }
