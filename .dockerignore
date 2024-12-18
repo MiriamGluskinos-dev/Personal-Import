@@ -1,0 +1,10 @@
+node_modules
+.git
+.dockerignore
+dist
+build
+coverage
+*.log
+.env
+DockerDesktopWSL
+

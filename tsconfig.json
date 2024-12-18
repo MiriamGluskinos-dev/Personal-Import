@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist", // Output files go here
+    "rootDir": "./src", // Source files are in this directory
+    "allowJs": true, // Allow JavaScript files
+    "jsx": "react-jsx", // For React
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src"
+  ], // Files to compile
+  "exclude": [
+    "node_modules",
+    "dist"
+  ] // Ignore these
+}
