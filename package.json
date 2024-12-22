@@ -70,5 +70,10 @@
     "@pigment-css/react": "^0.0.20",
     "@mui/material-pigment-css": "^6.0.2",
     "form-data": "^3.0.0"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0",
+    "typescript": "^4.9.5"
   }
 }
+
