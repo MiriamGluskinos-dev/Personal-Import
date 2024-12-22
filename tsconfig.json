@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es5", // JavaScript version to compile to
+        "lib": [
+            "dom",
+            "es6"
+        ], // Include libraries for DOM and ES6
+        "jsx": "react", // Use React JSX transformation
+        "moduleResolution": "node", // Use Node.js module resolution
+        "allowJs": true, // Allow JavaScript files to be used
+        "skipLibCheck": true, // Skip type checking of declaration files
+        "esModuleInterop": true, // Allow default imports for CommonJS modules
+        "strict": true, // Enable strict type-checking options
+        "forceConsistentCasingInFileNames": true // Ensure consistent casing for filenames
+    },
+    "include": [
+        "src/**/*"
+    ], // Include all files in the src folder
+    "exclude": [
+        "node_modules"
+    ] // Exclude the node_modules folder
+}

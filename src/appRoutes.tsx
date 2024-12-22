@@ -1,5 +1,6 @@
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import SearchPage from './pages/SearchPage'
+import React from 'react'
 
 
 
