@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import AppRoutes from './appRoutes';
 import './i18n/config';
