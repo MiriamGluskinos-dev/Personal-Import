@@ -4,6 +4,7 @@ import Search from "../components/search/Search";
 import PageLink from "../components/pageLink/PageLink";
 import styles from './SearchPage.module.scss';
 import { useTranslation } from "react-i18next";
+import CategoriesArea from "../components/categoriesArea/CategoriesArea";
 
 export default function SearchPage() {
     const {t} = useTranslation();
@@ -12,6 +13,7 @@ export default function SearchPage() {
             <Title text={t('personalImportTitle')}/>
             <Search/>
             <PageLink/>
+            <CategoriesArea/>
         </div>
     )
 }

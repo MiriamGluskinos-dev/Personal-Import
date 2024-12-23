@@ -1,0 +1,18 @@
+.categoriesContainer {
+
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin: 10px;
+
+    .categoriesTitle {
+        color: var(--text-icon-subtle-primary, #0C3058);
+        text-align: right;
+        font-family: Rubik;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+        margin: 0.5rem;
+    }
+}
