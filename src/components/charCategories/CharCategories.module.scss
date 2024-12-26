@@ -1,0 +1,31 @@
+.letterContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    .letterStyle {
+        color: var(--text-icon-subtle-primary, #0C3058);
+        font-family: Rubik;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: right;
+    }
+
+    svg {
+        margin-top: 6px;
+        margin-bottom: 10px;
+    }
+
+}
+
+.iconCategoryItemContainer {
+    border-radius: var(--radius-s, 4px);
+    background: var(--Background-neutral-default, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    width: 188px;
+    height: 48px;
+    min-height: unset !important;
+}

@@ -1,0 +1,25 @@
+.allCategoriesTitle {
+  color: var(--text-icon-subtle-primary, #0C3058) !important;
+  font-family: Rubik !important;
+  font-size: 24px !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
+  margin-top: 100px !important;
+  margin-bottom: 50px !important;
+}
+
+.gridContainer {
+  max-width: 100%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+.gridItem {
+  padding: 10px;
+  text-align: center;
+}

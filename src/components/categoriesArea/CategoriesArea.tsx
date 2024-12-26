@@ -9,7 +9,6 @@ const CategoriesArea = () => {
   return <div className={styles.categoriesAreaStyle}>
     <SearchResultsCategories></SearchResultsCategories>
     <GeneralCategories />
-    <PageLink/>
   </div>
 };
 
