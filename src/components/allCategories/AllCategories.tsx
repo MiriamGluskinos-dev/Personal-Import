@@ -3,6 +3,7 @@ import styles from './AllCategories.module.scss';
 import Title from '../title/Title';
 import { useTranslation } from 'react-i18next';
 import CharCategories from '../charCategories/CharCategories';
+import { Typography } from '@mui/material';
 
 const AllCategories = () => {
   const { t } = useTranslation();
@@ -59,15 +60,19 @@ const AllCategories = () => {
 
   const { i18n } = useTranslation();
   const alphabet: string[] = generateAlphabet(i18n.language);
-  const letterItems: string[] = ['1', '2', '3']
+  const letterItems: string[] = ['חומרי גלם', 'חשמל ואלקטרוניקה', 'חו”ג ושונות']
   return (
-    <div className={styles.gridContainer}>
-      {alphabet.map((letter: string, index: number) => (
-        <div key={index} className={styles.gridItem}>
-          <CharCategories letter={letter} letterItems={letterItems} />
-        </div>
-      ))}
-    </div>
+    <>
+      <Typography className={styles.allCategoriesTitle}>{t('searchByCategory')}</Typography>
+      <div className={styles.gridContainer}>
+        {alphabet.map((letter: string, index: number) => (
+          <div key={index} className={styles.gridItem}>
+            <CharCategories letter={letter} letterItems={letterItems} />
+          </div>
+        ))}
+      </div>
+
+    </>
   );
 };
 

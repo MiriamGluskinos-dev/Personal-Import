@@ -11,7 +11,7 @@ const IconCategoryItem = ({ text, iconPath }: { text: string, iconPath: string }
       <ListItemIcon>
         <img src={iconPath} />
       </ListItemIcon>
-      <Typography variant="inherit">{text}</Typography>
+      <Typography className={styles.categoryTeaxtStyle} variant="inherit">{text}</Typography>
     </MenuItem>
   );
 };
