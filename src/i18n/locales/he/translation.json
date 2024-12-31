@@ -4,5 +4,6 @@
     "categoriesTitle": "קטגוריות",
     "moreCategoriesTitle": "קטגוריות נוספות",
     "goToAllCategories": "מעבר לכל הקטגוריות",
-    "searchByCategory": "חיפוש לפי קטגוריה"
+    "searchByCategory": "חיפוש לפי קטגוריה",
+    "searchResultsTitle": "מוצגים {{resultsCount}} פרטים עבור \"{{querySearch}}\""
 }

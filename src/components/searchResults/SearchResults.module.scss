@@ -3,4 +3,47 @@
     background: var(--Background-neutral-default, #FFF) !important;
     width: 65%;
     margin: 15px;
+    padding: 20px;
+
+    .titleContainerStyle {
+        align-items: start;
+        display: flex;
+
+        .titleStyle {
+            color: var(--downriver-40, #496482);
+            text-align: right;
+            font-family: Rubik;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+    }
+
+    .resultsContainerStyle {
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+
+        .resultsStyle {
+            color: var(--text-icon-subtle-secondary, #5878A4);
+            font-family: Rubik;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 31px;
+            display: inline !important;
+        }
+
+        .resultsBoldStyle {
+            color: var(--text-icon-subtle-secondary, #5878A4);
+            text-align: right;
+            font-family: Rubik;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 31px;
+            display: inline !important;
+        }
+    }
 }
