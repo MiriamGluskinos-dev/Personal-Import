@@ -6,6 +6,8 @@ import styles from './SearchPage.module.scss';
 import { useTranslation } from "react-i18next";
 import CategoriesArea from "../components/categoriesArea/CategoriesArea";
 import AllCategories from "../components/allCategories/AllCategories";
+import SearchResults from "../components/searchResults/SearchResults";
+import { display } from "@mui/system";
 
 export default function SearchPage() {
     const { t } = useTranslation();
@@ -22,7 +24,10 @@ export default function SearchPage() {
                     <div>
                         <Title title={t('personalImportTitle')} subTitle={t('personalImportSubTitle')} />
                         <Search />
-                        <CategoriesArea />
+                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                            <CategoriesArea />
+                            <SearchResults />
+                        </div>
                         <PageLink onClick={handleLinkClick} />
                     </div>
                 )
