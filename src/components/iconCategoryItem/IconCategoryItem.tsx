@@ -32,8 +32,6 @@ const IconCategoryItem = ({
           {text}
         </Typography>
       </MenuItem>
-
-      {/* Pass state and handlers to the modal */}
       <SubCutegoriesPopup title={text} isOpen={isModalOpen} handleClose={handleCloseModal} />
     </>
   );
