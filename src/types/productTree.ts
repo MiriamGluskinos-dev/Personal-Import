@@ -1,32 +1,34 @@
-export interface RequiredDocument {
+export type RequiredDocument = {
     name: string;
     externalCode: string;
     allowNoDocument: boolean;
 }
 
-export interface RequiredLicense {
+export type RequiredLicense = {
     externalCode: string;
     licenseConfirmationComputerization: number;
     confirmationTypeLink: string | null;
     confirmationTypeName: string;
     authorityName: string;
     authorityLink: string | null;
-}
+};
 
-export interface Question {
+export type Answer = {
+    id: number;
+    text: string;
+    eAnswerEffect: number;
+    productID: number | null;
+    nextQuestionWhenEffectIsOneMoreQuestion: number | null;
+};
+
+export type Question = {
     id: number;
     text: string;
     questionNumber: number;
-    answers: {
-        id: number;
-        text: string;
-        eAnswerEffect: number;
-        productID: number | null;
-        nextQuestionWhenEffectIsOneMoreQuestion: number | null;
-    }[];
-}
+    answers: Answer[];
+};
 
-export interface Product {
+export type Product = {
     id: number;
     name: string | null;
     branch: string | null;
@@ -38,7 +40,7 @@ export interface Product {
     quantityUnitTypes: string[];
     relaventEntitlementTypes: number[];
     questions: Question[];
-}
+};
 
 export interface DataStructure {
     products: Product[];

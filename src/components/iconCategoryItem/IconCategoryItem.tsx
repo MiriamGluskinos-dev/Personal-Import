@@ -5,7 +5,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Typography from '@mui/material/Typography';
 
 
-const IconCategoryItem = ({ text, iconPath }: { text: string, iconPath: string }) => {
+const IconCategoryItem = ({ text, iconPath }: { text: string | null, iconPath: string }) => {
   return (
     <MenuItem className={styles.menuItem}>
       <ListItemIcon>
