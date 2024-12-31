@@ -67,7 +67,7 @@ const AllCategories = () => {
       <div className={styles.gridContainer}>
         {alphabet.map((letter: string, index: number) => (
           <div key={index} className={styles.gridItem}>
-            <CharCategories letter={letter} letterItems={letterItems} />
+            <CharCategories letter={letter}/>
           </div>
         ))}
       </div>

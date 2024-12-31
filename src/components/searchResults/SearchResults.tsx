@@ -3,7 +3,6 @@ import { Card, Typography } from "@mui/material";
 import styles from './SearchResults.module.scss'
 import { Product } from "../../types/productTree";
 import { useTranslation } from "react-i18next";
-import { fontWeight } from "@mui/system";
 
 const SearchResults = ({ results, querySearch }: { results: Product[], querySearch: string }) => {
     const { t } = useTranslation();
