@@ -17,7 +17,7 @@ const SearchResults = ({ results, querySearch }: { results: Product[], querySear
             <Typography className={styles.resultsContainerStyle}>
                 {results.map((product) => (
                     <div style={{ display: 'flex', gap: '4px' }}>
-                    <text className={styles.resultsBoldStyle} >{product.name}</text><text className={styles.resultsStyle}> / {product.branch}</text>
+                    <text className={styles.resultsBoldStyle}>{product.name}</text><text className={styles.resultsStyle}>/ {product.branch}</text>
                 </div>
                 ))}
             </Typography>

@@ -1,29 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Card, CardContent, IconButton, Modal, Typography } from '@mui/material';
+import { Card, CardContent, IconButton, MenuItem, Modal, Select, Tooltip, Typography } from '@mui/material';
 import styles from './SubCutegoriesPopup.module.scss';
 import { Box, display, grid, Grid } from '@mui/system';
+import { Product } from '../../types/productTree';
+import { useProductContext } from '../../context/DataProvider';
+import zIndex from '@mui/material/styles/zIndex';
 
 const SubCutegoriesPopup = ({ title, isOpen, handleClose }: {
-    title: string, isOpen: boolean;
+    title: string | null, isOpen: boolean;
     handleClose: () => void;
 }) => {
-    const subCategories: string[] = ['panda', 'lion', 'dog', 'monkey'];
     let [subSubCategories, setSubSubCategories] = useState<string[]>([]);
-    const handleCardClick = (subCategory: string) => {
+    const handleCardClick = (subCategory: string | null) => {
         console.log(`Card clicked: ${subCategory}`);
         const newSubSubCategories = ['burger', 'pizza', 'salad', 'falafel'];
         setSubSubCategories(newSubSubCategories);
     };
 
+    const handleChange = () => {
+        //TO DO go to declaration page
+    };
+
     const [modalHeight, setModalHeight] = useState(0);
     const modalRef = useRef<HTMLDivElement>(null);
+    const { products } = useProductContext();
 
-    useEffect(() => {
-        if (modalRef.current) {
-            const height = modalRef.current.scrollHeight + 32;
-            setModalHeight(height);
+    function getSubCategories(categoryName: string | null): (string | null)[] {
+        if (!(!categoryName || typeof categoryName !== "string")) {
+            const categorySubCategories = [
+                ...new Set(
+                    products
+                        .filter(product => product.branch && product.branch === categoryName)
+                        .map(product => product.category)
+                ),
+            ];
+            return categorySubCategories;
         }
-    }, [subCategories, subSubCategories]);
+        return [];
+    }
+
+    function getsubCategoryProducts(subCategory: string | null): Product[] {
+        return products.filter(product => product.category == subCategory);
+    }
+    const subCategories: (string | null)[] = getSubCategories(title);
     return (
         <Modal open={isOpen} onClose={handleClose} className={styles.modalStyle}>
             <Box className={styles.boxStyle} ref={modalRef} >
@@ -34,31 +53,49 @@ const SubCutegoriesPopup = ({ title, isOpen, handleClose }: {
                     {title}
                 </Typography>
                 <Typography variant="body1" className={styles.gridContainer}>
-                    <Grid spacing={2} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }} className={styles.gridStyle}>
-                        {subCategories.map((subCategory) => (
-                            <Card className={styles.subCategoryStyle}
-                                onClick={() => handleCardClick(subCategory)}>
-                                <CardContent className={styles.subCategoryContentStyle}>
-                                    <Typography className={styles.cardText}>
-                                        {subCategory}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </Grid>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <Grid spacing={2} sx={{ gridTemplateColumns: 'repeat(2, 1fr)' }} className={styles.gridStyle}>
-                        {subSubCategories.map((subSubCategory) => (
-                            <Card className={styles.subSubCategoryStyle} key={subSubCategory}>
-                                <CardContent>
-                                    <Typography>{subSubCategory}</Typography>
-                                </CardContent>
-                            </Card>
-                        ))}
+                    <Grid
+                        container
+                        spacing={2}
+                        sx={{ gridTemplateColumns: "repeat(2, 1fr)" }}
+                        className={styles.gridStyle}
+                    >
+                        {subCategories!.map((subCategory, subIndex) => {
+                            const subCategoryProducts = getsubCategoryProducts(subCategory);
+
+                            return (
+                                <Tooltip title={subCategory}>
+                                    <Select
+                                        className={styles.selectStyle}
+                                        onChange={(event) => handleChange()}
+                                        displayEmpty
+                                        value=''
+                                        renderValue={() => subCategory || ""}
+                                        IconComponent={() => (
+                                            <img src="/icons/arrow-down.svg" alt="Arrow Icon"
+                                                className={styles.iconStyle}
+                                            />
+                                        )}
+                                        sx={{
+                                            paddingLeft: '40px',
+                                            '& .MuiSelect-select': {
+                                                minWidth: '100% !important',
+                                                zIndex: 100,
+                                                paddingRight: '15px !important',
+                                            }
+                                        }}
+                                    >
+                                        {subCategoryProducts.map((product, index) => (
+                                            <MenuItem key={index} value={product.name || ""}>
+                                                {product.name}
+                                            </MenuItem>
+                                        ))}
+                                    </Select>
+                                </Tooltip>
+                            );
+                        })}
                     </Grid>
                 </Typography>
+
             </Box>
         </Modal>
     );

@@ -6,10 +6,10 @@ import Typography from '@mui/material/Typography';
 import SubCutegoriesPopup from '../subCutegoriesPopup/SubCutegoriesPopup';
 
 const IconCategoryItem = ({
-  text,
+  category,
   iconPath,
 }: {
-  text: string;
+  category: string | null;
   iconPath: string;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,13 +26,13 @@ const IconCategoryItem = ({
     <>
       <MenuItem className={styles.menuItem} onClick={handleOpenModal}>
         <ListItemIcon>
-          <img src={iconPath} alt={text} />
+          <img src={iconPath} alt={category ?? ''} />
         </ListItemIcon>
         <Typography className={styles.categoryTeaxtStyle} variant="inherit">
-          {text}
+          {category}
         </Typography>
       </MenuItem>
-      <SubCutegoriesPopup title={text} isOpen={isModalOpen} handleClose={handleCloseModal} />
+      <SubCutegoriesPopup title={category} isOpen={isModalOpen} handleClose={handleCloseModal} />
     </>
   );
 };

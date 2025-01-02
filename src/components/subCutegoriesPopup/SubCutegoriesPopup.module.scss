@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     border-radius: var(--radius-m, 8px);
-    transition: height 0.3s ease-in-out; 
+    transition: height 0.3s ease-in-out;
     overflow: hidden;
 
     .boxStyle {
@@ -53,31 +53,26 @@
             justify-content: center;
             align-items: center;
 
-            .subCategoryStyle, .subSubCategoryStyle {
+            .selectStyle {
+                color: var(--text-icon-subtle-primary, #0C3058);
+                text-align: right;
+                font-family: Rubik;
+                font-size: var(--font-size-s, 16px);
+                font-style: normal;
+                font-weight: var(--font-weight-regular, 400);
+                line-height: 125%;
                 border-radius: var(--radius-m, 8px);
                 border: 1px solid var(--Border-subtle-default, #8596AF);
                 background: var(--Background-neutral-default, #FFF);
-                display: flex;
-                padding: var(--space-400, 12px) var(--space-500, 16px);
-                justify-content: start;
-                align-items: center;
-                gap: var(--space-300, 8px);
-                align-self: stretch;
-                width: 155px;
-                height: 24px;
+                max-width: 250px;
 
-                .subCategoryContentStyle {
-                    padding: 0 !important;
-
-                    .cardText {
-                        color: var(--text-icon-subtle-primary, #0C3058);
-                        text-align: right;
-                        font-family: Rubik;
-                        font-size: var(--font-size-s, 16px);
-                        font-style: normal;
-                        font-weight: var(--font-weight-regular, 400);
-                        line-height: 125%;
-                    }
+                .iconStyle {
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 6%;
+                    top: 50%;
+                    transform: translateY(-50%);
                 }
             }
         }
