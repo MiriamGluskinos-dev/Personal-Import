@@ -50,7 +50,7 @@ export default function SearchPage() {
                         />
                         <div style={{ display: 'flex', flexDirection: 'row' }}>
                             <CategoriesArea />
-                            {/* <SearchResults results={results} querySearch={searchQuery} /> */}
+                            <SearchResults results={results} querySearch={searchQuery} />
                         </div>
                         <PageLink onClick={handleLinkClick} />
                     </div>

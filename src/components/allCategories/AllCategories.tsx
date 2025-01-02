@@ -4,6 +4,9 @@ import Title from '../title/Title';
 import { useTranslation } from 'react-i18next';
 import CharCategories from '../charCategories/CharCategories';
 import { Typography } from '@mui/material';
+import { useProductContext } from '../../context/DataProvider';
+import { Product } from '../../types/productTree';
+
 
 const AllCategories = () => {
   const { t } = useTranslation();
@@ -57,23 +60,48 @@ const AllCategories = () => {
 
     return alphabet;
   }
+  function getLetterCategories(products: Product[], letter: string) {
+    if (!(!letter || typeof letter !== "string" || letter.length !== 1)) {
+      const filtered = [
+        ...new Set(
+          products.filter(product =>
+            product.branch && product.branch!.startsWith(letter))
+            .map(product => product.branch)
+        )];
+      const uniqueCategories = new Set<string | null>();
+      return filtered.filter((category) => {
+        if (!uniqueCategories.has(category)) {
+          uniqueCategories.add(category);
+          return true;
+        }
+        return false;
+      });
+    }
+  }
 
   const { i18n } = useTranslation();
+  const { products } = useProductContext();
   const alphabet: string[] = generateAlphabet(i18n.language);
-  const letterItems: string[] = ['חומרי גלם', 'חשמל ואלקטרוניקה', 'חו”ג ושונות']
   return (
     <>
-      <Typography className={styles.allCategoriesTitle}>{t('searchByCategory')}</Typography>
+      <Typography className={styles.allCategoriesTitle}>
+        {t('searchByCategory')}
+      </Typography>
       <div className={styles.gridContainer}>
-        {alphabet.map((letter: string, index: number) => (
-          <div key={index} className={styles.gridItem}>
-            <CharCategories letter={letter}/>
-          </div>
-        ))}
+        {alphabet.map((letter: string, index: number) => {
+          // Dynamically filter products based on the letter
+          const letterCategories = getLetterCategories(products, letter);
+          if (letterCategories && letterCategories?.length > 0)
+            return (
+              <div key={index} className={styles.gridItem}>
+                <CharCategories letter={letter} letterCategories={letterCategories} />
+              </div>
+            );
+        })}
       </div>
-
     </>
   );
+
 };
 
 export default AllCategories;

@@ -2,7 +2,7 @@
     "compilerOptions": {
         "resolveJsonModule": true,
         "module": "ESNext",
-        "target": "es5", // JavaScript version to compile to
+        "target": "es2015", // JavaScript version to compile to
         "lib": [
             "dom",
             "es6"

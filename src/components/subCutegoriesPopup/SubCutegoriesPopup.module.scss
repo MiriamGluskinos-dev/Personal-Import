@@ -1,0 +1,80 @@
+.modalStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-m, 8px);
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
+
+    .boxStyle {
+        position: relative;
+        width: 735px;
+        background-color: #FFF;
+        box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+        padding: 20px 20px 40px 20px;
+        border-radius: var(--radius-m, 8px);
+    }
+
+    .titleStyle {
+        color: var(--text-icon-subtle-primary, #0C3058);
+        text-align: right;
+        font-family: Rubik;
+        font-size: var(--font-size-xl, 24px);
+        font-style: normal;
+        font-weight: var(--font-weight-bold, 700);
+        line-height: 125%;
+        margin: 30px;
+    }
+
+    .closeButton {
+        border: none;
+        background-color: transparent;
+        align-self: flex-end;
+        position: absolute;
+        cursor: pointer;
+        left: 0;
+        top: 0;
+        padding: 20px;
+    }
+
+
+
+    .gridContainer {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        padding: 0;
+        justify-content: start;
+
+        .gridStyle {
+            display: grid;
+            gap: 16px;
+            width: 70%;
+            justify-content: center;
+            align-items: center;
+
+            .selectStyle {
+                color: var(--text-icon-subtle-primary, #0C3058);
+                text-align: right;
+                font-family: Rubik;
+                font-size: var(--font-size-s, 16px);
+                font-style: normal;
+                font-weight: var(--font-weight-regular, 400);
+                line-height: 125%;
+                border-radius: var(--radius-m, 8px);
+                border: 1px solid var(--Border-subtle-default, #8596AF);
+                background: var(--Background-neutral-default, #FFF);
+                max-width: 250px;
+
+                .iconStyle {
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 6%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
